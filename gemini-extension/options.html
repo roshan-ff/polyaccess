@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Settings — Gemini Summarizer</title>
+<style>
+  body {
+    font-family: "Segoe UI", system-ui, sans-serif;
+    max-width: 480px;
+    margin: 40px auto;
+    color: #12181f;
+    line-height: 1.5;
+  }
+  h1 { font-size: 20px; }
+  label { display: block; font-weight: 600; margin-top: 18px; margin-bottom: 6px; }
+  input[type="password"], input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #d8dde3;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+  button {
+    margin-top: 16px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    background: #2a5bd7;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  #saved { margin-left: 12px; color: #1a7f37; font-weight: 600; }
+  a { color: #2a5bd7; }
+  button:focus-visible, input:focus-visible {
+    outline: 3px solid #ffb703;
+    outline-offset: 2px;
+  }
+</style>
+</head>
+<body>
+  <h1>Gemini Summarizer — Settings</h1>
+  <p>
+    Paste a Gemini API key from
+    <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">Google AI Studio</a>.
+    The key is stored only in your browser's synced extension storage and is
+    sent directly to Google's API — never to any third-party server.
+  </p>
+
+  <label for="apiKey">Gemini API key</label>
+  <input type="password" id="apiKey" placeholder="AIza..." autocomplete="off" />
+
+  <div>
+    <button id="saveBtn">Save key</button>
+    <span id="saved" hidden>Saved ✓</span>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

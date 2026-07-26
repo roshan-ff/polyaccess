@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Gemini Multilingual Summarizer & Voice Navigator",
+  "version": "1.0.0",
+  "description": "Summarizes any web page in the language of your choice using the Gemini API, and supports voice commands and text-to-speech for hands-free, accessible browsing.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": [
+    "https://generativelanguage.googleapis.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "Gemini Summarizer & Voice Navigator"
+  },
+  "options_page": "options.html",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

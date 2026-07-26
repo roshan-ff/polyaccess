@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Gemini Summarizer & Voice Navigator</title>
+<link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1 class="app__title">Summarizer &amp; Voice Nav</h1>
+      <button id="openOptions" class="icon-btn" title="Settings" aria-label="Open settings">⚙</button>
+    </header>
+
+    <section class="controls" aria-label="Summary controls">
+      <label for="langSelect" class="field-label">Summary language</label>
+      <select id="langSelect" class="select">
+        <option value="English">English</option>
+        <option value="Spanish">Spanish</option>
+        <option value="French">French</option>
+        <option value="German">German</option>
+        <option value="Hindi">Hindi</option>
+        <option value="Tamil">Tamil</option>
+        <option value="Mandarin Chinese">Mandarin Chinese</option>
+        <option value="Arabic">Arabic</option>
+        <option value="Portuguese">Portuguese</option>
+        <option value="Japanese">Japanese</option>
+      </select>
+
+      <button id="summarizeBtn" class="primary-btn">
+        Summarize this page
+      </button>
+
+      <button id="voiceBtn" class="voice-btn" aria-pressed="false">
+        <span class="voice-btn__dot" aria-hidden="true"></span>
+        <span id="voiceBtnLabel">Start voice control</span>
+      </button>
+    </section>
+
+    <section class="status" role="status" aria-live="polite" id="statusLine"></section>
+
+    <section class="summary" aria-label="Summary output">
+      <div class="summary__toolbar">
+        <button id="readAloudBtn" class="link-btn" disabled>🔊 Read aloud</button>
+        <button id="stopReadBtn" class="link-btn" disabled>⏹ Stop</button>
+      </div>
+      <div id="summaryText" class="summary__text" tabindex="0">
+        Click "Summarize this page" or say <em>"summarize"</em> after starting voice control.
+      </div>
+    </section>
+
+    <section class="commands" aria-label="Voice command reference">
+      <details>
+        <summary>Voice commands</summary>
+        <ul>
+          <li>"summarize" — summarize the current page</li>
+          <li>"read" / "read summary" — read the summary aloud</li>
+          <li>"stop" — stop reading</li>
+          <li>"scroll down" / "scroll up" — scroll the page</li>
+          <li>"go to top" / "go to bottom" — jump to top/bottom</li>
+          <li>"go back" / "go forward" — browser history navigation</li>
+          <li>"switch to [language]" — change summary language, e.g. "switch to French"</li>
+        </ul>
+      </details>
+    </section>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>
